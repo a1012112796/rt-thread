@@ -180,8 +180,6 @@ jobs:
         shell: bash
         run: |
           pwd
-          # cd tests
-          # make test 
-          # make gcov
-          # make clean
-          # cd ..
+          make test -C ./tests
+          make gcov -C ./tests
+          make clean -C ./tests
