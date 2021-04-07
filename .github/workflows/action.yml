@@ -179,7 +179,4 @@ jobs:
       - name: run ci tests
         shell: bash
         run: |
-          pwd
-          make test -C ./tests
-          make gcov -C ./tests
-          make clean -C ./tests
+          make test gcov clean -C tests
