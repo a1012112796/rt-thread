@@ -96,9 +96,9 @@ impl File {
         if n < 0 { Err(FileWriteErr) } else { Ok(n as usize) }
     }
 
-    pub fn seek(&self, offset: i64) -> RTResult<i64> {
+    pub fn seek(&self, offset: isize) -> RTResult<isize> {
         let n = unsafe { libc::lseek(self.fd, offset as libc::off_t, libc::SEEK_SET) };
-        if n < 0 { Err(FileSeekErr) } else { Ok(n) }
+        if n < 0 { Err(FileSeekErr) } else { Ok(n as isize) }
     }
 
     pub fn flush(&self) -> RTResult<()> {
